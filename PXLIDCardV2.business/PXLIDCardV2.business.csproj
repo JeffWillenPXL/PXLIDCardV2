@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PXLIDCardV2.data\PXLIDCardV2.data.csproj" />
+    <ProjectReference Include="..\PXLIDCardV2.domain\PXLIDCardV2.domain.csproj" />
+  </ItemGroup>
+
+</Project>
