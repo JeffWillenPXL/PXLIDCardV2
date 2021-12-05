@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PXLIDCardV2.business.Contracts;
 using PXLIDCardV2.business.Services;
@@ -18,9 +15,6 @@ using PXLIDCardV2.data.Repositories;
 using PXLIDCardV2.data.Repositories.Evaluations;
 using PXLIDCardV2.data.Repositories.Users;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PXLIDCardV2.api
 {
@@ -44,7 +38,7 @@ namespace PXLIDCardV2.api
             });
             services.AddDbContext<Context>(options =>
             {
-                string connectionString = Configuration.GetConnectionString("ConnectionString");
+                string connectionString = Configuration["ConnectionString"];
                 options.UseSqlServer(connectionString, sqlOptions =>
                 {
                     sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
@@ -52,6 +46,7 @@ namespace PXLIDCardV2.api
                 options.EnableSensitiveDataLogging();
             });
 
+            services.AddScoped<DbInitializer>();
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<ILectorRepository, LectorRepository>();

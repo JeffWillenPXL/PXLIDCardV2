@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PXLIDCardV2.data", "PXLIDCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PXLIDCardV2.business", "PXLIDCardV2.business\PXLIDCardV2.business.csproj", "{66AC34A0-4C51-4687-B806-1CC038EE698A}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8278C2E6-122A-434A-9F0C-EC7EFC8FE9A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{66AC34A0-4C51-4687-B806-1CC038EE698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AC34A0-4C51-4687-B806-1CC038EE698A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66AC34A0-4C51-4687-B806-1CC038EE698A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8278C2E6-122A-434A-9F0C-EC7EFC8FE9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8278C2E6-122A-434A-9F0C-EC7EFC8FE9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8278C2E6-122A-434A-9F0C-EC7EFC8FE9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8278C2E6-122A-434A-9F0C-EC7EFC8FE9A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
