@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:PXLIDCardV2.ui.Behaviors"
+             xmlns:converters="clr-namespace:PXLIDCardV2.ui.Converters"
+             x:Class="PXLIDCardV2.ui.Views.OptionsView"
+             Title="PXL Id-Card App">
+    <ContentPage.Resources>
+        <converters:SelectionChangedConverter x:Key="SelectionChangedConverter"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <CollectionView ItemsSource="{Binding Path=Options}" SelectionMode="Single">
+                <CollectionView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="SelectionChanged" Command="{Binding OptionSelectedCommand}" Converter="{StaticResource SelectionChangedConverter}"/>
+                </CollectionView.Behaviors>
+                <CollectionView.Header>
+                    <Grid BackgroundColor="#03A9F4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="1" Grid.Row="2" Text="Options" Style="{DynamicResource SubtitleStyle}"/>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

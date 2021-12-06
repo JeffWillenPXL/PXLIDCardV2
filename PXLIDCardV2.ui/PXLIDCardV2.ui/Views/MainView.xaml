@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PXLIDCardV2.ui.Views.MainView"
+            xmlns:views="clr-namespace:PXLIDCardV2.ui.Views"
+            xmlns:optviews="clr-namespace:PXLIDCardV2.ui.Views.OptViews">
+    <FlyoutPage.Flyout>
+        <views:OptionsView BindingContext="{Binding OptionsViewModel}"/>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <optviews:OptWelcomeView />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
